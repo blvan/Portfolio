@@ -1,0 +1,21 @@
+http://localhost:8080/api/score/NumberLink.
+Connection-Type: applocatopn/json
+
+{
+"game": "NumberLink",
+"player": "Zhaba",
+"points": 30,
+"played_on": "2023-04-22 11:28:38.842",
+"ident":
+}
+
+http://localhost:8080/api/rating/NumberLink.
+Connection-Type: applocatopn/json
+
+{
+"game": "NumberLink",
+"player": "Zhaba",
+"points": 30,
+"rating":
+"ident":
+}

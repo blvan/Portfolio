@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gamestudio</title>
+  <link rel="stylesheet" href="/css/menu.css"/>
+</head>
+<div th:replace="fragments::navmenu">
+<nav id='menu'>
+  <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+  <ul>
+    <li><a href='http://localhost:8080/numberlink'>|</a></li>
+    <li><a href='http://localhost:8080'>Login</a></li>
+    <li><a href='http://localhost:8080/numberlink'>|</a></li>
+    <li><a href='http://localhost:8080/numberlink'>NumberLinkGame</a></li>
+    <li><a href='http://localhost:8080/numberlink'>|</a></li>
+    <li><a href='http://localhost:8080/rules'>Rules</a></li>
+    <li><a href='http://localhost:8080/numberlink'>|</a></li>
+    <li><a class='dropdown-arrow' href='http://localhost:8080/numberlink'>Services</a>
+      <ul class='sub-menus'>
+        <li><a href='http://localhost:8080/numberlink/comment'>Comment</a></li>
+        <li><a href='http://localhost:8080/numberlink/rating'>Rating</a></li>
+      </ul>
+    </li>
+    <li><a href='http://localhost:8080/numberlink'>|</a></li>
+    <li><a href='http://localhost:8080/numberlink'><^_^></a></li>
+  </ul>
+</nav></div>

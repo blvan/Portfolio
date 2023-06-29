@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- Declare User Controller for Thymeleaf -->
+<!--/*@thymesVar id="userController" type="sk.tuke.gamestudio.server.controller.UserController"*/-->
+<!-- Header Section -->
+
+
+<div th:fragment="header" >
+
+    <div class="word" align='center'>
+        <h1>Welcome to <a href="/">NumberLinkGame!</a></h1>
+
+    <span th:if="${@userController.logged}">
+    <p>Logged in as: <strong th:text="${@userController.loggedUser.login}"/></p>
+    <a href="/logout">Logout</a>
+</span>
+    </div>
+</div>
+</html>

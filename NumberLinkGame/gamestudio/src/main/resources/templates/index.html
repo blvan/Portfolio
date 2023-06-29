@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gamestudio</title>
+    <link rel="stylesheet" href="/css/numberlink.css"/>
+    <link rel="stylesheet" href="/css/login.css"/>
+    <link rel="stylesheet" href="/css/button.css"/>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!--/*@thymesVar id="userController" type="sk.tuke.gamestudio.server.controller.UserController"*/-->
+
+<div th:replace="fragments::header"> </div>
+
+<span th:if="not ${@userController.logged}">
+
+     <form id="login-form" action="/login" method="post">
+            <div class="login" >
+               Login:
+                <input type="text" name="login"/><br/>
+            Password:
+                <input type="password" name="password"/>
+         <div class="container">
+            <button id="button" type="submit"></button>
+        </div>
+                 </div>
+        <div class="shadow"></div>
+        </form>
+
+    <script type="text/javascript">
+   $(function() {
+       var isButtonClicked = false;
+       $("#button").click(function(event) {
+           event.preventDefault();
+           if (!isButtonClicked) {
+               isButtonClicked = true;
+               $("#button").addClass("onclic");
+               validate();
+           }
+       });
+
+       function validate() {
+           var login = $("#login-form input[name='login']").val();
+           var password = $("#login-form input[name='password']").val();
+           if ($("#login-form")[0].checkValidity() && login && password) {
+               setTimeout(function() {
+                   $("#button").removeClass("onclic");
+                   $("#button").addClass("validate");
+                   $.ajax({
+                       url: '/login',
+                       type: 'POST',
+                       data: {
+                           login: login,
+                           password: password
+                       },
+                       success: function(response) {
+                           setTimeout(function() {
+                               $("#button").removeClass("validate");
+                               window.location.href = "/numberlink";
+                           }, 2000);
+                       },
+                       error: function(xhr, status, error) {
+                           isButtonClicked = false;
+                           $("#button").removeClass("onclic");
+                           console.error(error);
+                       }
+                   });
+               }, 2000);
+           } else {
+               isButtonClicked = false;
+               $("#button").removeClass("onclic"); // remove class if form is invalid
+           }
+       }
+   });
+
+</script>
+
+    </span>
+
+</body>
+
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel='stylesheet' href='css/menu.css' type='text/css' />
+  <link rel="stylesheet" href="/css/numberlink.css"/>
+  <link rel="stylesheet" href="/css/login.css"/>
+</head>
+<body>
+<div class="word">
+
+  <table class="scores">
+    <tbody>
+
+    <h2 th:if="${@userController.logged}" >Rate game</h2>
+    <div th:if="${@userController.logged}" class="rating">
+      <a class="star" href="/numberlink/rating/add/rating?rating=1">&#9734;</a>
+      <a class="star" href="/numberlink/rating/add/rating?rating=2">&#9734;</a>
+      <a class="star" href="/numberlink/rating/add/rating?rating=3">&#9734;</a>
+      <a class="star" href="/numberlink/rating/add/rating?rating=4">&#9734;</a>
+      <a class="star" href="/numberlink/rating/add/rating?rating=5">&#9734;</a>
+    </div>
+
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
