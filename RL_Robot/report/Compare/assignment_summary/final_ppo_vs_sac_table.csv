@@ -1,0 +1,4 @@
+model,algorithm,reward_setup,seed,total_timesteps,train_seconds,train_minutes,success_rate,grasp_rate,pick_rate,mean_collisions,notes
+PPO shaped air 1M,PPO,shaped air-goal,42,1000000,265.6,4.4,0.00,0.00,0.00,0.00,equal-step PPO baseline
+SAC shaped air 1M,SAC,shaped air-goal,42,1000000,8712.3,145.2,1.00,1.00,1.00,0.00,equal-step SAC comparison run
+SAC curriculum air multi-seed,SAC,curriculum shaped air-goal,"42, 123, 2026","500000 +/- 100000","5405.9 +/- 2710.7","90.1 +/- 45.2","1.00 +/- 0.00","1.00 +/- 0.00","1.00 +/- 0.00","0.00 +/- 0.00",final SAC implementation; mean/std over three seeds

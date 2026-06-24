@@ -1,0 +1,4 @@
+run,seed,total_timesteps,train_seconds,early_stop_reason,eval_goal_success_rate,eval_grasp_success_rate,eval_pick_success_rate,eval_mean_collision_count,eval_mean_reward
+20260528_003622_sac_curriculum_air_seed_42,42,400000,3281.804554632,target_reached:pick_success_rate=1.0000 target=0.9500,1.0,1.0,1.0,0.0,309.93056280646215
+20260528_013020_sac_curriculum_air_seed_123,123,500000,4477.062718911,target_reached:pick_success_rate=1.0000 target=0.9500,1.0,1.0,1.0,0.0,301.32569449731477
+20260528_024300_sac_curriculum_air_seed_2026,2026,600000,8458.887544091998,target_reached:pick_success_rate=1.0000 target=0.9500,1.0,1.0,1.0,0.0,323.87864080835277

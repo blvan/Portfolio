@@ -1,0 +1,8 @@
+.git
+__pycache__/
+*.pyc
+logs/
+data_lake/
+warehouse.duckdb
+mocks/
+.vscode/

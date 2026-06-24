@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel='stylesheet' href='css/menu.css' type='text/css' />
+  <link rel="stylesheet" href="/css/numberlink.css"/>
+  <link rel="stylesheet" href="/css/login.css"/>
+</head>
+<body>
+<div class="word">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    //<![CDATA[
+    $(document).ready(function () {
+      $.ajax({
+        url: "/api/comment/NumberLink",
+      }).done(function (json) {
+        for (var i = 0; i < json.length; i++) {
+          var comment = json[i];
+          $("#clientSideScoreTable1 tbody").append($("<tr><td>" + comment.player + "<td><td> " + comment.comment + "<td> <td>" + comment.game + "</tr>"));
+        }
+      });
+    });
+    //]]>
+  </script>
+
+  <!-- Render score with jQuery DataTables  https://datatables.net/ -->
+  <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"/>
+
+  <script type="text/javascript">
+    //<![CDATA[
+    $(document).ready(function () {
+      $('#clientSideScoreTable2').DataTable({
+        columns: [
+          {data: "player"},
+          {data: "comment"},
+          {data: "game"}
+        ],
+        ajax: {url: "/api/comment/NumberLink", dataSrc: ''}
+      });
+    });
+    //]]>
+  </script>
+
+  <!--/*@thymesVar id="message" type="java.lang.String"*/-->
+  <!--/*@thymesVar id="scores" type="java.util.List<sk.tuke.gamestudio.entity.Score>"*/-->
+  <!--/*@thymesVar id="userController" type="sk.tuke.gamestudio.server.controller.UserController"*/-->
+  <!--/*@thymesVar id="minesController" type="sk.tuke.gamestudio.server.controller.MinesController"*/-->
+
+  <h2>Comments</h2>
+  <h3>Comments generated on client with javascript</h3>
+  <table id="clientSideScoreTable1">
+    <thead>
+    <tr>
+      <th>Player:</th>
+
+      <th>Comment:</th>
+
+      <th><td>Game:</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <h3>Scores generated on client with jquery DataTable</h3>
+  <table id="clientSideScoreTable2" class="display">
+    <thead>
+    <tr>
+      <th>Player</th>
+      <th>Comment</th>
+      <th>Game</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+</div>
+
+</body>
+</html>

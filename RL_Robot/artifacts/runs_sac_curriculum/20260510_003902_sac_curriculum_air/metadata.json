@@ -1,0 +1,93 @@
+{
+  "run_dir": "artifacts/runs_sac_curriculum/20260510_003902_sac_curriculum_air",
+  "experiment_name": "sac_curriculum_air",
+  "algorithm": "SAC",
+  "reward": "shaped",
+  "seed": 42,
+  "total_timesteps": 400000,
+  "requested_total_timesteps": 1200000,
+  "n_envs": 8,
+  "vec_env": "subproc",
+  "device": "cuda",
+  "train_seconds": 5079.057334887,
+  "model_path": "artifacts/runs_sac_curriculum/20260510_003902_sac_curriculum_air/final_model.zip",
+  "stages": [
+    {
+      "index": 1,
+      "name": "reach_object",
+      "timesteps": 100000,
+      "requested_timesteps": 120000,
+      "train_seconds": 1170.1506783690002,
+      "model_path": "artifacts/runs_sac_curriculum/20260510_003902_sac_curriculum_air/checkpoints/stage_01_reach_object.zip",
+      "shaped_reward": {
+        "goal_distance_weight": 0.25,
+        "gripper_distance_weight": 1.2,
+        "lift_weight": 0.2,
+        "height_overshoot_penalty_weight": 0.5,
+        "success_bonus": 0.5,
+        "action_penalty_weight": 0.01,
+        "collision_penalty_weight": 0.0
+      },
+      "advance_when": {
+        "enabled": true,
+        "min_timesteps": 100000,
+        "metric": "mean_gripper_object_distance_min",
+        "mode": "min",
+        "target": 0.07,
+        "target_patience_evals": 1
+      },
+      "stop_reason": "stage_advance:reach_object:mean_gripper_object_distance_min=0.0173 target=0.0700"
+    },
+    {
+      "index": 2,
+      "name": "lift_object",
+      "timesteps": 180000,
+      "requested_timesteps": 180000,
+      "train_seconds": 2251.774987838,
+      "model_path": "artifacts/runs_sac_curriculum/20260510_003902_sac_curriculum_air/checkpoints/stage_02_lift_object.zip",
+      "shaped_reward": {
+        "goal_distance_weight": 0.5,
+        "gripper_distance_weight": 0.5,
+        "lift_weight": 2.5,
+        "height_overshoot_penalty_weight": 1.0,
+        "success_bonus": 1.5,
+        "action_penalty_weight": 0.01,
+        "collision_penalty_weight": 0.0
+      },
+      "advance_when": {
+        "enabled": true,
+        "min_timesteps": 150000,
+        "metric": "mean_object_lift_max",
+        "mode": "max",
+        "target": 0.08,
+        "target_patience_evals": 1
+      },
+      "stop_reason": null
+    },
+    {
+      "index": 3,
+      "name": "place_object",
+      "timesteps": 120000,
+      "requested_timesteps": 900000,
+      "train_seconds": 1656.8790261550002,
+      "model_path": "artifacts/runs_sac_curriculum/20260510_003902_sac_curriculum_air/checkpoints/stage_03_place_object.zip",
+      "shaped_reward": {
+        "goal_distance_weight": 4.0,
+        "gripper_distance_weight": 0.1,
+        "lift_weight": 0.25,
+        "height_overshoot_penalty_weight": 3.0,
+        "success_bonus": 10.0,
+        "action_penalty_weight": 0.01,
+        "collision_penalty_weight": 0.0
+      },
+      "advance_when": null,
+      "stop_reason": null
+    }
+  ],
+  "early_stop": {
+    "reason": "target_reached:pick_success_rate=1.0000 target=0.9500",
+    "timesteps": 400000,
+    "best_metric_value": 277.0261460920405,
+    "best_metric_timesteps": 300000
+  }
+}

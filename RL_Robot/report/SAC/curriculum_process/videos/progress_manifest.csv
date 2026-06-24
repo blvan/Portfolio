@@ -1,0 +1,6 @@
+index,label,model_path,clip_path
+1,0050k_steps,/mnt/c/Users/krdan/Documents/New project/artifacts/runs_sac_curriculum/20260510_003902_sac_curriculum_air/checkpoints/model_50000_steps.zip,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/videos/01_0050k_steps.mp4
+2,0150k_steps,/mnt/c/Users/krdan/Documents/New project/artifacts/runs_sac_curriculum/20260510_003902_sac_curriculum_air/checkpoints/model_150000_steps.zip,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/videos/02_0150k_steps.mp4
+3,0300k_steps,/mnt/c/Users/krdan/Documents/New project/artifacts/runs_sac_curriculum/20260510_003902_sac_curriculum_air/checkpoints/model_300000_steps.zip,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/videos/03_0300k_steps.mp4
+4,0400k_steps,/mnt/c/Users/krdan/Documents/New project/artifacts/runs_sac_curriculum/20260510_003902_sac_curriculum_air/checkpoints/model_400000_steps.zip,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/videos/04_0400k_steps.mp4
+5,final_model,/mnt/c/Users/krdan/Documents/New project/artifacts/runs_sac_curriculum/20260510_003902_sac_curriculum_air/final_model.zip,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/videos/05_final_model.mp4

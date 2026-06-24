@@ -1,0 +1,2 @@
+* * * * *  cd /app && flock -n /tmp/pull.lock  /usr/local/bin/python -m scripts.now_playing_pull >> /app/logs/now_pull.log 2>&1
+*/2 * * * * cd /app && flock -n /tmp/build.lock bash -lc '/usr/local/bin/python -m scripts.now_playing_bronze_to_silver && /usr/local/bin/python -m scripts.build_duckdb' >> /app/logs/now_silver.log 2>&1

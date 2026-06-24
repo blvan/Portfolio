@@ -1,0 +1,9 @@
+{
+  "train_seconds": "5405.9183 +/- 2710.6506",
+  "total_timesteps": "500000.0000 +/- 100000.0000",
+  "eval_goal_success_rate": "1.0000 +/- 0.0000",
+  "eval_grasp_success_rate": "1.0000 +/- 0.0000",
+  "eval_pick_success_rate": "1.0000 +/- 0.0000",
+  "eval_mean_collision_count": "0.0000 +/- 0.0000",
+  "eval_mean_reward": "311.7116 +/- 11.3815"
+}

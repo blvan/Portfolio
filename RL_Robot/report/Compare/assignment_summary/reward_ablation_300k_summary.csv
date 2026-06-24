@@ -1,0 +1,7 @@
+run,algorithm,reward,total_timesteps,train_seconds,train_minutes,eval_mean_reward,eval_goal_success_count,eval_goal_success_rate,eval_grasp_success_count,eval_grasp_success_rate,eval_pick_success_count,eval_pick_success_rate,eval_mean_collision_count,eval_total_collision_count,train_reward_rolling_std20,train_last100_episode_success,source
+20260425_140951_ppo_dense,PPO,dense,300000,394.05629693899937,6.567604948983322,-12.863947733943643,2,0.02,0,0.0,,,0.0,0,1.4652029958365378,0.03,report/Compare/reward_ablation_300k
+20260425_141702_ppo_shaped,PPO,shaped,300000,400.9806355969995,6.683010593283325,-12.1884161267173,2,0.02,0,0.0,,,0.0,0,4.610704749761787,0.03,report/Compare/reward_ablation_300k
+20260426_195507_ppo_penalized,PPO,penalized,300000,318.2598670880002,5.304331118133336,-13.73574074339498,2,0.02,0,0.0,0.0,0.0,0.0,0,4.57478743719523,0.05,fresh penalized run
+20260425_153141_sac_dense,SAC,dense,300000,3265.154651494,54.41924419156667,-12.863947733943643,2,0.02,0,0.0,,,0.0,0,1.36560010378676,0.08,report/Compare/reward_ablation_300k
+20260425_162446_sac_shaped,SAC,shaped,300000,3281.262979672,54.68771632786666,-12.641784128388949,2,0.02,0,0.0,,,0.0,0,4.88664911613288,0.09,report/Compare/reward_ablation_300k
+20260426_200029_sac_penalized,SAC,penalized,300000,2494.200263095,41.570004384916665,-12.97183841292188,3,0.03,0,0.0,0.0,0.0,0.0,0,4.9282862045124025,0.08,fresh penalized run

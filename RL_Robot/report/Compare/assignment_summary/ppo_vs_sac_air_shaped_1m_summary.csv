@@ -1,0 +1,3 @@
+run,algorithm,reward,total_timesteps,train_seconds,train_minutes,eval_mean_reward,eval_goal_success_count,eval_goal_success_rate,eval_grasp_success_count,eval_grasp_success_rate,eval_pick_success_count,eval_pick_success_rate,eval_mean_collision_count,eval_total_collision_count
+20260426_193808_ppo_shaped_air_1m,PPO,shaped,1000000,265.568639671,4.426143994516667,-13.02541273419154,0,0.0,0,0.0,0,0.0,0.0,0
+sac_air_shaped_1m,SAC,shaped,1000000,8712.333486077998,145.20555810129997,130.62762723672992,100,1.0,100,1.0,100,1.0,0.0,0

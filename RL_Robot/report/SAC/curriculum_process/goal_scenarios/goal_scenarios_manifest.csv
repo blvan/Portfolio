@@ -1,0 +1,7 @@
+index,slug,label,goal_x,goal_y,goal_z,clip_path
+1,air_left_mid,air left/mid,1.2,0.62,0.56,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/goal_scenarios/01_air_left_mid.mp4
+2,air_right_mid,air right/mid,1.42,0.68,0.58,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/goal_scenarios/02_air_right_mid.mp4
+3,air_front_high,air front/high,1.32,0.88,0.64,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/goal_scenarios/03_air_front_high.mp4
+4,air_back_high,air back/high,1.16,0.82,0.62,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/goal_scenarios/04_air_back_high.mp4
+5,table_left,table left,1.2,0.62,0.42,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/goal_scenarios/05_table_left.mp4
+6,table_center,table center,1.32,0.68,0.42,/mnt/c/Users/krdan/Documents/New project/report/SAC/curriculum_process/goal_scenarios/06_table_center.mp4

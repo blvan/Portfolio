@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robot-arm-rl"
+version = "0.1.0"
+description = "Starter project for PPO/SAC training on Gymnasium-Robotics Fetch pick-and-place tasks."
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "gymnasium>=1.0.0",
+    "gymnasium-robotics>=1.3.0",
+    "mujoco>=3.2.0",
+    "stable-baselines3[extra]>=2.4.0",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "pyyaml>=6.0",
+    "matplotlib>=3.8",
+    "imageio>=2.34",
+    "imageio-ffmpeg>=0.5",
+    "tensorboard>=2.16",
+    "rich>=13.7",
+]
+
+[project.scripts]
+robot-arm-train = "robot_arm_rl.train:main"
+robot-arm-evaluate = "robot_arm_rl.evaluate:main"
+robot-arm-compare = "robot_arm_rl.compare:main"
+robot-arm-training-report = "robot_arm_rl.training_report:main"
+robot-arm-visualize = "robot_arm_rl.visualize:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

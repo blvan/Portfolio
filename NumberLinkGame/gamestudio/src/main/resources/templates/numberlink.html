@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<!--/*@thymesVar id="lineController" type="sk.tuke.gamestudio.server.controller.LineController"*/-->
+<head>
+    <meta charset="UTF-8">
+    <title>Gamestudio</title>
+    <link rel='stylesheet' href='css/menu.css' type='text/css' />
+    <link rel='stylesheet' href='css/numberlink.css' type='text/css' />
+
+</head>
+
+<body style="text-align: left;">
+
+<div class='container'>
+    <div class='page-header'>
+        <nav id='menu'>
+            <input type='checkbox' id='responsive-menu'><label></label>
+            <ul>
+                <li><a href='http://localhost:8080/numberlink'>|</a></li>
+                <li><a href='http://localhost:8080'>Login</a></li>
+                <li><a href='http://localhost:8080/numberlink'>|</a></li>
+                      <li><a href='http://localhost:8080/numberlink'>NumberLinkGame</a></li>
+                      <li><a href='http://localhost:8080/numberlink'>|</a></li>
+                      <li><a href='http://localhost:8080/numberlink/rules'>Rules</a></li>
+                      <li><a href='http://localhost:8080/numberlink'>|</a></li>
+                <li><a class='dropdown-arrow' href='http://localhost:8080/numberlink'>Services</a>
+                    <ul class='sub-menus'>
+                        <li><a href='http://localhost:8080/numberlink/score'>Scores</a></li>
+                        <li><a href='http://localhost:8080/numberlink/comment'>Comment</a></li>
+                        <li><a href='http://localhost:8080/numberlink/rating'>Rating</a></li>
+                        <li><a href='http://localhost:8080/numberlink/JSscore'>ScoreJS</a></li>
+                        <li><a href='http://localhost:8080/numberlink/JScomment'>CommentJS</a></li>
+                        <li><a href='http://localhost:8080/numberlink/JSrating'>RatingJS</a></li>
+                    </ul>
+                </li>
+                <li><a href='http://localhost:8080/numberlink'>|</a></li>
+                <li><a href='http://localhost:8080/numberlink'><^_^></a></li>
+            </ul>
+        </nav>
+     <!--   <img src="images/title.png" alt="Numberlink" style="width:500px; height:85px; margin: 5px auto;">
+   --> </div>
+
+    <div class='row' align='center'>
+        <div class='col-md-6'>
+            <div id='numberlink-vis'>
+                <!-- Game Container -->
+
+                <span th:utext="${@lineController.getHtmlField()}"></span>
+                <br>
+                <div class="button-54" >
+                    <a href="/numberlink/new" class="button">New game</a> </div>
+                <br>
+                <div class="button-54" >
+                    <a href="/numberlink/comment/add" class="button">Add comment</a>
+                </div>
+                <br>
+                <div class="button-54" >
+                    <a href="/numberlink/rating/add" class="button">Rate game</a>
+                </div>
+                <br>
+              <!--  <div class="button-54" >
+                    <a href="/numberlink/score" class="button">Score</a>
+                </div>-->
+                <br>
+                <style>
+                    .button {
+                        display: inline-block;
+                        padding: 0.5em 1em;
+                        background-color: #eeeeee;
+                        color: #000000;
+                        text-decoration: none;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                    }
+                </style>
+            </div>
+        </div>
+       <div class='col-md-6'>
+        </div>
+    </div>
+    <footer align='center'>
+          </footer>
+</div>
+
+
+</body>
+
+</html>

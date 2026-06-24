@@ -1,0 +1,5 @@
+timesteps,training_stage_id,training_stage_name,episodes,mean_reward,goal_success_rate,grasp_success_rate,pick_success_rate,mean_collision_count,mean_object_goal_distance_final,mean_gripper_object_distance_min,mean_object_lift_max,run,algorithm,reward,label
+100000,0,reach_object,10.0,-11.45487818305788,0.0,0.0,0.0,0.0,0.2180051450075958,0.0173401842491839,0.0048922445797835,20260510_003902_sac_curriculum_air,SAC,shaped,sac_curriculum_air
+200000,1,lift_object,10.0,84.56180181660079,0.5,0.9,0.5,0.0,0.0670725835690364,0.0146064863464901,0.1605177971417817,20260510_003902_sac_curriculum_air,SAC,shaped,sac_curriculum_air
+300000,2,place_object,10.0,277.0261460920405,1.0,1.0,1.0,0.0,0.0389485369108462,0.0094086616157071,0.1658720860571431,20260510_003902_sac_curriculum_air,SAC,shaped,sac_curriculum_air
+400000,2,place_object,10.0,318.78180705062266,1.0,1.0,1.0,0.0,0.0240473152019642,0.0112826892628841,0.1777000984324523,20260510_003902_sac_curriculum_air,SAC,shaped,sac_curriculum_air

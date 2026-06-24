@@ -1,0 +1,141 @@
+body {
+    font-size: 16px;
+    background-color: #eeeeee;
+    position: relative;
+    min-height: 100%;
+}
+
+
+.modal .modal-body {
+    max-height: 542px;
+    overflow-y: auto;
+}
+
+.container {
+    min-width: 500px;
+    min-height: 700px;
+}
+
+#numberlink-vis {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    height: 452px;
+    width: 400px;
+}
+
+a {
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.step {
+    width: 225px;
+}
+
+@media (max-width: 480px) {
+    article {
+        float: none;
+        width: auto;
+    }
+
+    aside {
+        position: static;
+        float: none;
+        background: pink;
+        margin-left: 5px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 667px) {
+    body {
+        font-size: 8px;
+    }
+    .container {
+        width: 200%;
+    }
+}
+
+text {
+    background: radial-gradient(ellipse farthest-corner at center center, #CF3A98 47%, #4F7EFF 64%, #E121FF 47%, #65CFC8 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+hr {
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+}
+
+footer {
+    position: absolute;
+    font-size: 13px;
+    margin-bottom: 5px;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+    width: inherit;
+}
+
+.vspace {
+    margin: 5px 0;
+}
+
+canvas {
+    background-color: #BBBBBB;
+    border: 1px solid white;
+    float: left;
+    opacity: 0.75;
+    border-radius: 8px;
+}
+
+div.gamerow {
+    margin: 0 auto;
+}
+
+.button-54 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    text-align: center;
+    transform: translateX(20px) scale(1.1);
+    margin-left: 30px;
+}
+
+.button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+@media (min-width: 768px) {
+    .button-54 {
+        padding: 0.25em 0.75em;
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    height: 100%;
+    background-color: #333;
+}
+
+.word {
+    margin: auto;
+    color: white;
+    font: 700 normal 2.5em 'tahoma';
+    text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}

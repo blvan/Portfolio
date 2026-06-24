@@ -1,0 +1,15 @@
+{
+  "runs": 1,
+  "curves_csv": "report/SAC/curriculum_process/training_curves.csv",
+  "summary_csv": "report/SAC/curriculum_process/run_summary.csv",
+  "plots": [
+    "time_reward.png",
+    "timestep_reward.png",
+    "entity_reward_components.png",
+    "success_collision_over_time.png",
+    "stage_behavior.png",
+    "algorithm_reward_comparison.png",
+    "step_trace_diagnostics.png",
+    "progress_eval_snapshots.png"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "episodes": 100,
+  "mean_reward": 309.93056280646215,
+  "std_reward": 14.800559540275643,
+  "mean_length": 50.0,
+  "goal_success_rate": 1.0,
+  "goal_success_count": 100,
+  "grasp_success_rate": 1.0,
+  "grasp_success_count": 100,
+  "pick_success_rate": 1.0,
+  "pick_success_count": 100,
+  "mean_collision_count": 0.0,
+  "total_collision_count": 0,
+  "mean_object_goal_distance_final": 0.023702034273022546,
+  "mean_gripper_object_distance_min": 0.00938650861316256,
+  "mean_object_lift_max": 0.19109685908317647
+}

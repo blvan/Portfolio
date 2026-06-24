@@ -1,0 +1,109 @@
+seed: 42
+env:
+  reward: shaped
+  max_episode_steps: 50
+  n_envs: 8
+  vec_env: subproc
+  metrics:
+    grasp_lift_threshold: 0.03
+    grasp_distance_threshold: 0.07
+    place_lift_threshold: 0.08
+  air_goal:
+    enabled: true
+    min_height_above_table: 0.1
+    max_height_above_table: 0.25
+  shaped_reward:
+    goal_distance_weight: 1.0
+    gripper_distance_weight: 0.25
+    lift_weight: 0.5
+    height_overshoot_penalty_weight: 2.0
+    success_bonus: 8.0
+    action_penalty_weight: 0.01
+    collision_penalty_weight: 0.0
+algorithm:
+  name: SAC
+  kwargs:
+    learning_rate: 0.0003
+    buffer_size: 1000000
+    learning_starts: 1000
+    batch_size: 512
+    gamma: 0.95
+    tau: 0.005
+    train_freq: 1
+    gradient_steps: 8
+    ent_coef: auto
+  use_her: false
+  her: {}
+train:
+  total_timesteps: 1200000
+  checkpoint_freq: 50000
+  log_interval: 10
+  tracking:
+    step_trace:
+      enabled: true
+      log_every: 10
+      max_rows: 200000
+    progress_eval:
+      enabled: true
+      eval_freq: 100000
+      episodes: 10
+      deterministic: true
+      early_stopping:
+        enabled: true
+        min_timesteps: 300000
+        metric: pick_success_rate
+        target: 0.95
+        target_patience_evals: 2
+        patience_metric: mean_reward
+        patience_evals: 4
+        min_delta: 1.0
+        mode: max
+  stages:
+  - name: reach_object
+    timesteps: 120000
+    advance_when:
+      enabled: true
+      min_timesteps: 100000
+      metric: mean_gripper_object_distance_min
+      mode: min
+      target: 0.07
+      target_patience_evals: 1
+    shaped_reward:
+      goal_distance_weight: 0.25
+      gripper_distance_weight: 1.2
+      lift_weight: 0.2
+      height_overshoot_penalty_weight: 0.5
+      success_bonus: 0.5
+      action_penalty_weight: 0.01
+      collision_penalty_weight: 0.0
+  - name: lift_object
+    timesteps: 180000
+    advance_when:
+      enabled: true
+      min_timesteps: 150000
+      metric: mean_object_lift_max
+      mode: max
+      target: 0.08
+      target_patience_evals: 1
+    shaped_reward:
+      goal_distance_weight: 0.5
+      gripper_distance_weight: 0.5
+      lift_weight: 2.5
+      height_overshoot_penalty_weight: 1.0
+      success_bonus: 1.5
+      action_penalty_weight: 0.01
+      collision_penalty_weight: 0.0
+  - name: place_object
+    timesteps: 900000
+    shaped_reward:
+      goal_distance_weight: 4.0
+      gripper_distance_weight: 0.1
+      lift_weight: 0.25
+      height_overshoot_penalty_weight: 3.0
+      success_bonus: 10.0
+      action_penalty_weight: 0.01
+      collision_penalty_weight: 0.0
+eval:
+  episodes: 100
+  deterministic: true
+experiment_name: sac_curriculum_air

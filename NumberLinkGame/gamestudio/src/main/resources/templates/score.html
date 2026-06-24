@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='stylesheet' href='css/menu.css' type='text/css' />
+    <link rel="stylesheet" href="/css/numberlink.css"/>
+    <link rel="stylesheet" href="/css/login.css"/>
+</head>
+<body>
+<div class="word">
+<h2>Scores</h2>
+<tr>
+<th>#</th>
+<th>Player</th>
+<th>Points</th>
+<th>Played at</th>
+</tr>
+<table id="serverSideScoreTable">
+    <tbody>
+    <ol>
+        <li th:each="score : ${scores}">
+            <span th:text="${score.player}"/>
+            <span th:text="${score.points}"/>
+            <span th:text="${score.playedOn}"/>
+        </li>
+    </ol>
+    </tbody>
+</table>
+</div>
+
+</body>
+</html>

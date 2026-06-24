@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  tv-datalake:
+    build: .
+    container_name: tv-datalake
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data_lake:/app/data_lake
+      - ./logs:/app/logs
+      - ./warehouse.duckdb:/app/warehouse.duckdb

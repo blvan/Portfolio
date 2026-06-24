@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel='stylesheet' href='css/menu.css' type='text/css' />
+  <link rel="stylesheet" href="/css/numberlink.css"/>
+  <link rel="stylesheet" href="/css/login.css"/>
+</head>
+<body>
+<div class="word">
+  <h2>Comments</h2>
+  <tr>
+    <th>#</th>
+    <th>Player</th>
+    <th>Comment</th>
+  </tr>
+  <table class="comments">
+    <tbody>
+    <ol>
+      <li th:each="comment : ${comments}">
+        <span th:text="${comment.player}"/>
+        <span th:text="${comment.comment}"/>
+      </li>
+    </ol>
+    </tbody>
+  </table>
+</div>
+<!--/*@thymesVar id="scores" type="java.util.List<sk.tuke.gamestudio.entity.Score>"*/-->
+<!--<tr th:each="score, it : ${scores}">
+    <td th:text="${it.index + 1}"/>
+    <td th:text="${score.player}"/>
+    <td th:text="${score.points}"/>
+    <td th:text="${#dates.format(score.playedAt, 'dd.MM.yyyy HH:mm')}"/>
+</tr>-->
+</body>
+</html>
